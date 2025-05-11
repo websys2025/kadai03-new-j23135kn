@@ -24,20 +24,20 @@
                 for (let i = 0; i < items.length; i++) {
                     console.log("商品番号: " + items[i].id + ", 商品名: " + items[i].name + ", 金額: " + items[i].price + ", 在庫数: " + items[i].stock);
                 }
-                console.log(""); // 空行の出力
+                console.log("");
             }
 
             // 商品購入の関数
             function buyItem(no) {
-                if (no < 1 || no > 9) {
+                if (no - 1 < 1 || no - 1 > 9) {
                     console.log(no + "は無効な商品番号です。番号は1～8で指定してください。");
                     return;
                 }
-                if (items[no].stock > 0) {
-                    console.log("商品番号: " + items[no].id + ", 商品名: " + items[no].name + "を購入します。");
-                    items[no].stock--;
+                if (items[no - 1].stock > 0) {
+                    console.log("商品番号: " + items[no - 1].id + ", 商品名: " + items[no - 1].name + "を購入します。");
+                    items[no - 1].stock--;
                 } else {
-                    console.log("商品番号: " + items[no].id + ", 商品名: " + items[no].name + "を購入します。");
+                    console.log("商品番号: " + items[no - 1].id + ", 商品名: " + items[no - 1].name + "を購入します。");
                     console.log("在庫がありません。");
                 }
                 console.log("");
